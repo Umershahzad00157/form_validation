@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="index.js"></script>
+</head>
+<body>
+
+            <div class="container">
+                <div class="main">
+                    <h1 class="heading">Contact Us!</h1>
+
+                    <div class="content">
+                        <div class="content1">
+                            <div class="sub_content1"><p class="prg icon"><i class="fa-regular fa-envelope"></i></p></div>
+                            <div class="sub_content2"> 
+                                <div class="a">
+
+                                    <p class="prg"><b>Send Message!</b></p></div>
+                                </div>
+                        </div>
+
+                    
+
+                        <div class="content2">
+                            <input id="email" class="input" type="email" placeholder="Email"><br>
+                            <p id="required"></p>
+                            <input id="pnmbr" class="input" name="pnmbr" type="tel" required placeholder="Phone Number"><br>
+                            <p id="required2"></p>
+                            <input id="company" class="input" name="company name" type="text" required placeholder="Company"><br>
+                            <p id="required3"></p>
+                            
+                            <input id="help" class="input1" name="help" type="text" required placeholder="Please Help Us How We Can help You"><br>
+                            <p id="required4"></p>
+                           
+                            <button class="submit" onclick= validForm()>Submit</button>
+                    
+                        </div>
+
+                    </div>
+                </div>
+          
+            </div>
+
+            <script>
+                
+                function validForm(){
+                    let email= document.getElementById("email").value;
+                    let nmbr= document.getElementById("pnmbr").value;
+                    let company= document.getElementById("company").value;
+                    let help = document.getElementById("help").value;
+                          
+                            if (email==""){
+                                document.getElementById("required").innerHTML="Email field is required *";
+                                
+                            }
+
+                            else if (nmbr==""){
+                                document.getElementById("required2").innerHTML="Phone Number is required *";
+
+                            }
+                            else if (company==""){
+                                document.getElementById("required3").innerHTML="Company Name is required *";
+
+                            }
+                            else if( help == ""){
+                                document.getElementById("required4").innerHTML="Please write something in this required field *";
+
+                            }
+                            else{
+                                alert(`Thank you for reaching out via ${company}. We will get back to you at ${email}`);
+                            }
+                           
+                        }
+            </script>
+</body>
+</html>
